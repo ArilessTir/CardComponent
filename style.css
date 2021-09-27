@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+:root{
+    --pale-blue:hsl(225, 100%, 94%);
+    --bright-blue : hsl(245, 75%, 52%);
+    --violet : hsl(263, 66%, 45%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+    --white: hsl(0, 0%, 100%);
+    --gray: hsl(0, 0%, 33%);
+    --light-gray: hsl(0, 0%, 96%);
+    --border-radius: 15px;
+}
+
+body{
+    background-color: var(--pale-blue);
+    background-image: url('images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    font-family: 'Red Hat Display', sans-serif;
+    position: relative;
+    height: 100vh;
+}
+
+
+.card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 20em;
+    min-height: 32em;
+    border-radius: var(--border-radius);
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card:hover .hero{
+    transform: scale(1.1);
+    
+}
+
+
+.hero {
+    max-width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    transition: transform 0.4s;
+}
+
+
+p{
+    text-align: center;
+    margin: 0 25px;
+    color: black;
+    opacity: 0.4;
+}
+
+.card-title {
+    font-weight: 800;
+    font-size: 20px;
+    margin:  20px auto;
+}
+
+.card-title::after{
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: black;
+    display: block;
+    transition: width 0.4s;    
+}
+
+.card:hover .card-title::after{
+    width: 50%;
+}
+
+
+
+.price{
+    display: flex;
+    align-items: center;
+    background: var(--light-gray);
+    padding: 15px 15px;
+    border-radius: var(--border-radius);
+    margin: 15px 20px;
+}
+
+.plan{
+    font-weight: 900;
+    margin-left: 20px;
+}
+
+.plan::after{
+    content: '$59.99/year';
+    font-weight: 500;
+    color: black;
+    opacity: 0.4;
+}
+
+
+.price a{
+    margin-left: auto;
+    font-size: 14px;
+    transition: color 0.4s;
+}
+
+
+.price a:hover{
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+.btn {
+    display: block;
+    padding: 15px 0px;
+    border-radius: var(--border-radius);
+    border:none;
+    margin-top: 2px;
+    font-weight:700 ;
+    font-size: 15px;
+    margin: 5px 15px;
+    cursor: pointer;
+}
+
+.payment{
+    background-color: var(--bright-blue);
+    color:var(--white);
+    box-shadow: 0px 8px rgba(49, 49, 49, 0.096);
+    transition: background-color 0.1s;
+    position: relative;
+}
+
+.payment:hover{
+    background-color: var(--violet);
+
+}
+
+
+.cancel{
+    background: none;
+    color: var(--gray);
+}
+
+.cancel:hover{
+    color: var(--dark-blue)
+}
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media (max-width:300px) {
+    body{
+        background-image: url('images/pattern-background-mobile.svg');
+    }
+}
